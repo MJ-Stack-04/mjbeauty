@@ -12,9 +12,14 @@ import 'package:mjbeauty/routes/AppRoutes.dart';
 class AppPages {
   static final pages = [
     GetPage(
-        name: AppRoutes.home,
+        name: AppRoutes.main,
         page: () => const MainScreen(),
         binding: MainBinding(),
+    ),
+    GetPage(
+        name: AppRoutes.home,
+        page: () => const HomeScreen(),
+        binding: HomeBinding(),
     ),
     GetPage(
         name: AppRoutes.product,

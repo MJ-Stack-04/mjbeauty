@@ -1,14 +1,11 @@
 import 'package:get/get.dart';
 import 'package:mjbeauty/controllers/HomeController.dart';
+import 'package:mjbeauty/controllers/ProductController.dart';
 
-class HomeBindings extends Bindings{
+class HomeBinding extends Bindings{
   @override
-  void dependancies () {
-    Get.put(Homecontroller());
-  }
-
-  @override
-  void dependencies() {
-    // TODO: implement dependencies
+  void dependencies () {
+    Get.lazyPut<HomeController>(() => HomeController());
+    Get.lazyPut<ProductController> (() => ProductController());
   }
   }

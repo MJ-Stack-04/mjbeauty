@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:mjbeauty/model/model.dart';
 
-class Homecontroller extends GetxController{
+class HomeController extends GetxController{
   var products = <Product> [].obs;
 
   @override

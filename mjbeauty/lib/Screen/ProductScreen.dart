@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mjbeauty/controllers/ProductController.dart';
 import 'package:mjbeauty/controllers/CartController.dart';
+import 'package:mjbeauty/routes/AppRoutes.dart';
 
 class ProductScreen extends GetView<ProductController> {
   const ProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final cart = Get.find<CartController>();
+    final cartController = Get.find<CartController>();
 
     return Scaffold(
       appBar: AppBar(
@@ -42,11 +43,9 @@ class ProductScreen extends GetView<ProductController> {
 
               ElevatedButton(
                 onPressed: () {
-                  cart.addToCart(product);
-                  Get.snackbar(
-                    'Added To Cart',
-                    '${product.name} added successfully',
-                  );
+                  cartController.addToCart(product);
+                  debugPrint('${product.name} added successfully',);
+                  Get.toNamed(AppRoutes.cart);
                 },
                 child: const Text('Add To Cart'),
               ),
@@ -54,6 +53,7 @@ class ProductScreen extends GetView<ProductController> {
           ),
         );
       }),
+
     );
   }
 }

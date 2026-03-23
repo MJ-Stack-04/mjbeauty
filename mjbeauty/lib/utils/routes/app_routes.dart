@@ -1,4 +1,4 @@
-import 'package:mjbeauty/model/model.dart';
+import 'package:mjbeauty/model/product.dart';
 
 abstract class AppRoutes {
   static const main = '/';
